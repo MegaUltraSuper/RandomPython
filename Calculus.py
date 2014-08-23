@@ -7,7 +7,7 @@ def parabola(x):
     return x*x
 
 def line(x):
-    """F(x) = 2x+1"""
+    """F(x) = 2x"""
     return 2*x
 
 def poly(x):

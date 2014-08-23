@@ -52,3 +52,33 @@ def ackermann(a,b):
             return ackermann(a-1, ackermann(a,b-1))
     except:
         return "nested too deep"
+
+def fact(n):
+    """returns n!"""
+    try:
+        if n <= 1:
+            return 1
+        else:
+            return n*fact(n-1)
+    except:
+        return "could not find"
+
+def n_fact(a):
+    """returns 1!...n! corecursively"""
+    n,f = 1,1
+    while n <= a:
+        yield f
+        n,f = n+1,f*(n + 1)
+
+def hanoi(n):
+    """solves tower of hanoi for n stacks
+    answer = 2^(n+1) - 1"""
+    try:
+        if n <= 1:
+            return 1
+        else:
+            return 2*hanoi(n-1) +1
+    except:
+        return "could not solve"
+    
+    
