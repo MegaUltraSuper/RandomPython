@@ -205,4 +205,22 @@ def test(A):
     me = str(merge(A))
     print("Merge Sort: " +me+ " seconds")
 
+def boundedSearch(A,display=False):
+    """removes duplicates from array
+    similar to count sort"""
+    start = time.clock()
+    maximum = max(A)
+    C = [0]*(maximum+1)
+    for num in A:
+        C[num] = 1
+    A = []
+    for num in range(len(C)):
+        if C[num] != 0:
+            A.append(num)
+    if display == True:
+        print(A)
+    end = time.clock()
+    return end-start
+    
+
           
