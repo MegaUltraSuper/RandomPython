@@ -109,3 +109,40 @@ def square(num):
         s += 1+2*i
     return s/10000
 
+def eratosthenes(n=100):
+    """returns list of primes to n"""
+    if n < 1:
+        return "none"
+    A = [True]*n
+    A[0] = False
+    A[1] = True
+    for i in range(2,n):
+        if A[i] == True:
+            if isPrime(i):
+                A[i] = True
+                modifySieve(i,A)
+            else:
+                A[i] = False
+    for a in range(n):
+        if A[a]:
+            #print(a)
+            pass
+    
+def isPrime(num):
+    """checks prime for eratosthenes"""
+    if num == 2:
+        return True
+    i = 2
+    while i*i <= num:
+        if num%i == 0:
+            return False
+        i += 1
+    return True
+
+def modifySieve(num, A):
+    """modifies eratosthenes sieve thing"""
+    index=2
+    num
+    while num*index <= len(A)-1:
+        A[num*index] = False
+        index += 1
