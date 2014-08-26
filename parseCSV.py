@@ -37,18 +37,27 @@ def parseCSV(file, ColumnNames=True):
     #open file
     with open(file, mode='r') as data:
         #get Titles
-        Titles = data.readline()
-        if Titles == "":
-            return DataSets
-        Titles = Titles.split(',')
-        for title in Titles:
-            DataSets.append(list())
+        if ColumnNames == True:
+            Titles = data.readline()
+            if Titles == "":
+                return DataSets
+            Titles = Titles.split(',')
+            for title in Titles:
+                DataSets.append(list())
+        if ColumnNames == False:
+            firstline = data.readline()
+            if firstline == "":
+                return DataSets
+            num = firstline.count(',')+1
+            for title in range(num):
+                DataSets.append(list())
+            data.seek(0,0)
         #get rest of data
         rows = data.readlines()
         for row in rows:
             nums = row.split(',')
             for index in range(len(nums)):
-                n = int(nums[index].strip())
+                n = nums[index].strip()
                 DataSets[index].append(n)
     return DataSets
                     
