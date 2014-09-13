@@ -1,6 +1,8 @@
 RandomPython
 ============
 
--Various Python Practice Stuff
--That I am adding as I learn Python
--probably not useful
+  -Various Python Practice Stuff
+<br>
+  -I am adding things as I learn Python
+<br>
+  -Probably not useful, mostly common algorithm and functions...
